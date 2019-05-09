@@ -1,2 +1,2 @@
-# tamt
+# Tamt
 Tasks for my team
