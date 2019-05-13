@@ -1,0 +1,105 @@
+.header {
+  padding-left: 10px;
+  padding-top: 13px;
+}
+.header__search {
+  width: 250px;
+  margin: 0;
+  height: 25px;
+  padding: 12px 24px;
+  font-size: 14px;
+  background-color: transparent;
+  line-height: 18px;
+  color: #42526e;
+  /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #42526e;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  box-shadow: none;
+  transform-style: preserve-3d;
+
+  &::placeholder {
+    color: color(#575756 a(0.8));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  &:hover,
+  &:focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-bottom: 1px solid #42526e;
+    border-radius: 0;
+    box-shadow: none;
+    background-position: 100% center;
+  }
+}
+
+.x {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #42526e;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  &:hover {
+    background: #002036;
+  }
+  b {
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    border: solid 8px rgba(255,255,255,0);
+    &:nth-child(1) {
+      border-top-color: #f4f5f7;
+      top: -2px;
+    }
+    &:nth-child(2) {
+      border-left-color: #f4f5f7;
+      left: -2px;
+    }
+    &:nth-child(3) {
+      border-bottom-color: #f4f5f7;
+      bottom: -2px;
+    }
+    &:nth-child(4) {
+      border-right-color: #f4f5f7;
+      right: -2px;
+    }
+  }
+}
+
+.success {
+  color: #f5ffef !important;
+}
+
+.text-decoration:hover {
+  text-decoration: underline;
+}
+
+.tag-element {
+  display: inline-block;
+  padding: 0.33333rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: default;
+  background: #e9e9e9;
+  border: 1px solid #b3b3b3;
+  color: #6f6f6f;
+}

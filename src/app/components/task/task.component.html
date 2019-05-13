@@ -1,3 +1,41 @@
-<p>
-  task works!
-</p>
+<div class="grid-x grid-padding-y grid-padding-x">
+  <div class="cell mainbar__header">
+    <h4 class="float-left">Задачи</h4>
+    <button class="button small float-right" (click)="openAddToggle()">Добавить</button>
+  </div>
+</div>
+<div class="grid-x grid-padding-y grid-padding-x">
+  <div class="cell">
+    <table class="unstriped">
+      <thead>
+      <tr>
+        <th width="100px">ID</th>
+        <th>Название</th>
+        <th>Статус</th>
+        <th>Приоритет</th>
+        <th>Исполнитель</th>
+        <th>Срок</th>
+        <th>Изменения</th>
+        <th>Теги</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><span class="mainbar-page__marker"><span>50 061</span></span></td>
+        <td>Не работает кнопка</td>
+        <td><span class="label success">закрыта</span></td>
+        <td><a href="#" class="text-decoration">средний</a></td>
+        <td>Ходжер Даниил</td>
+        <td>27.06.19 г.</td>
+        <td>вчера 12:20</td>
+        <td>
+          <span class="tag-element">реклама</span>&nbsp;
+          <span class="tag-element">деньги</span>&nbsp;
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-add-task *ngIf="openAdd" (closeWin)="close($event)"></app-add-task>
+<app-edit-task *ngIf="openEdit"></app-edit-task>

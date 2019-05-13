@@ -1,0 +1,19 @@
+<div class="funwin" [style]="style">
+  <div class="grid-x grid-padding-y grid-padding-x">
+    <div class="cell funwin__header">
+      <h5>Новая заявка</h5>
+      <div class="close-button" (click)="close()">
+        <div class="x"><b></b><b></b><b></b><b></b></div>
+      </div>
+    </div>
+    <div class="cell">
+      <form>
+        <div class="grid-x grid-padding-x">
+          <div class="cell"><label>Название<input type="text" placeholder="Напишите понятное название задачи..."></label></div>
+          <div class="cell"><label>Описание<textarea class="funwin__textarea" placeholder="Определите короткое описание задачи"></textarea></label></div>
+          <div class="cell"><button class="button small" type="submit">Добавить</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+@import "~font-awesome/css/font-awesome.min.css";
+
 @import "settings";
 
 @import "../../node_modules/foundation-sites/scss/foundation";
@@ -56,3 +58,5 @@
 // @include foundation-flex-classes;
 @include foundation-visibility-classes;
 // @include foundation-prototype-classes;
+
+@import "./tamp-styles/style.scss";

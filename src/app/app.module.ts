@@ -9,6 +9,8 @@ import {MainbarComponent} from './components/mainbar/mainbar.component';
 import { TaskComponent } from './components/task/task.component';
 import { FunwinComponent } from './components/funwin/funwin.component';
 import { SystemComponent } from './components/system/system.component';
+import { AddTaskComponent } from './components/task/add-task/add-task.component';
+import { EditTaskComponent } from './components/task/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SystemComponent } from './components/system/system.component';
     MainbarComponent,
     TaskComponent,
     FunwinComponent,
-    SystemComponent
+    SystemComponent,
+    AddTaskComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,

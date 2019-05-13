@@ -1,0 +1,56 @@
+.sidebar {
+  .logo-bar {
+    a {
+      display: block;
+      img {
+        display: block;
+      }
+    }
+    border-bottom: 1px solid #294d6b;
+  }
+
+  .nav-bar {
+    color: white;
+    border-bottom: 1px solid #294d6b;
+    ul {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100%;
+      width: 100%;
+      li {
+        height: 50px;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        &:hover {
+          background-color: #001727;
+        }
+        i{
+          display: inline-block;
+          width: 50px;
+          text-align: center;
+          height: 50px;
+          line-height: 50px;
+        }
+        a {
+          color: white;
+          display: inline-block;
+          vertical-align: text-bottom;
+          width: 100px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:hover {
+            text-decoration: none;
+            color: #90caf9;
+          }
+        }
+      }
+    }
+  }
+}

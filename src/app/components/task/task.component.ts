@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
+  openAdd = false;
+  openEdit = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  openAddToggle() {
+    this.openAdd = !this.openAdd;
+  }
+
+  close() {
+    this.openAdd = false;
+  }
+
+  openEditToggle() {
+    this.openEdit = !this.openEdit;
   }
 
 }
