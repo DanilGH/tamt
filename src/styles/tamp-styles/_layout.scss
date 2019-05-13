@@ -26,6 +26,7 @@
 
 .mainbar {
   left: 50px;
+  min-width: 500px;
   top: 50px;
   right: 0;
   bottom: 0;
@@ -48,11 +49,11 @@
 }
 
 .funwin {
-  position: absolute;
-  //width: 500px;
-  min-width: 300px;
+  position: fixed;
+  width: 500px;
+  //min-width: 300px;
   border-left: 1px solid #dce4e8;
-  top: 0;//50px;
+  top: 50px;
   bottom: 0;
   //margin-left: 50px;
   right: 0;

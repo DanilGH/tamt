@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-edit-task',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditTaskComponent implements OnInit {
 
-  constructor() { }
+  @Input() editTask;
+  @Output() editToggle = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  close () {
+    this.editToggle.emit(!this.editTask);
   }
 
 }

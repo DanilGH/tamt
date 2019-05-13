@@ -1,10 +1,18 @@
+
 <div class="grid-x grid-padding-y grid-padding-x">
   <div class="cell mainbar__header">
     <h4 class="float-left">Задачи</h4>
-    <button class="button small float-right" (click)="openAddToggle()">Добавить</button>
+    <button class="button small float-right" (click)="addToggle()">Добавить</button>
   </div>
 </div>
-<div class="grid-x grid-padding-y grid-padding-x">
+
+<div class="grid-x grid-padding-y grid-padding-x" *ngIf="!isLoaded">
+  <div class="cell">
+    ...Загрузка...
+  </div>
+</div>
+
+<div class="grid-x grid-padding-y grid-padding-x" *ngIf="isLoaded">
   <div class="cell">
     <table class="unstriped">
       <thead>
@@ -20,9 +28,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td><span class="mainbar-page__marker"><span>50 061</span></span></td>
-        <td>Не работает кнопка</td>
+      <tr *ngFor="let task of tasks">
+        <td><span class="mainbar-page__marker"><span>{{task.id}}</span></span></td>
+        <td (click)="editToggle(task)">{{task.name.substring(0, 49) + (task.name.length>=50?'...':'')}}</td>
         <td><span class="label success">закрыта</span></td>
         <td><a href="#" class="text-decoration">средний</a></td>
         <td>Ходжер Даниил</td>
@@ -37,5 +45,7 @@
     </table>
   </div>
 </div>
-<app-add-task *ngIf="openAdd" (closeWin)="close($event)"></app-add-task>
-<app-edit-task *ngIf="openEdit"></app-edit-task>
+
+<app-add-task [addTask]="addTask" (addToggle)="addToggle($event)"></app-add-task>
+
+<app-edit-task *ngIf="editReload" [editTask]="editTask" (editToggle)="editToggle($event)"></app-edit-task>

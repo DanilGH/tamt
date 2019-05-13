@@ -10,32 +10,32 @@ import {tap} from "rxjs/operators";
 
 export class AuthService {
 
-  private token = null;
+  private token = '1f2bbcef-d6ec-475b-be57-dc832fa56671';
 
   constructor(private http: HttpClient) {
 
   }
 //
-  register(user: User): Observable<User> {
-    return this.http.post<User>('/api/auth/register', user)
-  }
+//   register(user: User): Observable<User> {
+//     return this.http.post<User>('/api/auth/register', user)
+//   }
+//
+//   login(user: User): Observable<{ token: string }> {
+//     return this.http.post<{ token: string }>('/api/auth/login', user)
+//       .pipe(
+//         tap(
+//           ({token}) => {
+//             localStorage.setItem('auth-token', token);
+//             this.setToken(token);
+//           }
+//         )
+//       )
+//   }
 
-  login(user: User): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>('/api/auth/login', user)
-      .pipe(
-        tap(
-          ({token}) => {
-            localStorage.setItem('auth-token', token);
-            this.setToken(token);
-          }
-        )
-      )
-  }
-
-  setToken(token: string) {
-    this.token = token;
-  }
-
+  // setToken(token: string) {
+  //   this.token = token;
+  // }
+  //
   getToken(): string {
     return this.token;
   }
@@ -44,8 +44,8 @@ export class AuthService {
     return !!this.token;
   }
 
-  logout() {
-    this.setToken(null);
-    localStorage.clear();
-  }
+  // logout() {
+  //   this.setToken(null);
+  //   localStorage.clear();
+  // }
 }

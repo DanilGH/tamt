@@ -1,13 +1,19 @@
-<div class="funwin">
+<div class="funwin" [style.right]="editTask?'0':'-900px'">
   <div class="grid-x grid-padding-y grid-padding-x">
     <div class="cell funwin__header">
       <h5>Редактировать заявку</h5>
-      <div class="close-button">
+      <div class="close-button" (click)="close()">
         <div class="x"><b></b><b></b><b></b><b></b></div>
       </div>
     </div>
     <div class="cell">
-
+      <form>
+        <div class="grid-x grid-padding-x">
+          <div class="cell"><label>Название<input type="text" placeholder="Напишите понятное название задачи..." [value]="editTask.name?editTask.name:''"></label></div>
+          <div class="cell"><label>Описание<textarea class="funwin__textarea" placeholder="Определите короткое описание задачи" [value]="editTask.description?editTask.description:''"></textarea></label></div>
+          <div class="cell"><button class="button small" type="submit">Сохранить</button></div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

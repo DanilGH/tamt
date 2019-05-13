@@ -7,8 +7,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class AddTaskComponent implements OnInit {
 
-  @Input() style;
-  @Output() closeWin = new EventEmitter();
+  @Input() addTask;
+  @Output() addToggle = new EventEmitter();
 
   constructor() {
   }
@@ -16,9 +16,8 @@ export class AddTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  close() {
-    this.closeWin.emit(false);
+  close () {
+    this.addToggle.emit(this.addTask);
   }
-
 
 }

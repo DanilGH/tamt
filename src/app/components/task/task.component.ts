@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from "../../services/task.service";
 
 @Component({
   selector: 'app-task',
@@ -7,24 +8,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
-  openAdd = false;
-  openEdit = false;
+  addTask = false;
+  editTask = false;
+  editReload = true;
+  isLoaded = false;
 
-  constructor() { }
+  tasks = [];
+
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+
+    this.taskService.getTasks().subscribe(
+      (data: {value: []}) => {
+        this.tasks = data.value;
+        console.log(this.tasks);
+        this.isLoaded = true;
+      }
+    )
   }
 
-  openAddToggle() {
-    this.openAdd = !this.openAdd;
+  addToggle(event = null) {
+    this.editTask = false;
+    if(event)
+      this.addTask = false;
+    else
+      this.addTask = true;
   }
 
-  close() {
-    this.openAdd = false;
-  }
-
-  openEditToggle() {
-    this.openEdit = !this.openEdit;
+  editToggle(event = null) {
+    this.addTask = false;
+    if(event){
+      this.editTask = event;
+    }
+    else{
+      this.editReload = false;
+      this.editTask = false;
+      this.editReload = true;
+    }
   }
 
 }
